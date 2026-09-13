@@ -1,14 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>For You</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Amanda ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, #ff8fab55, transparent 30%),
+        radial-gradient(circle at 80% 80%, #c77dff55, transparent 30%),
+        linear-gradient(135deg, #16001f, #3b073d, #14001c);
+      color: white;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 420px;
+      padding: 35px 25px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 28px;
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 60px rgba(0,0,0,.4);
+      animation: muncul 1s ease;
+    }
+
+    .heart {
+      font-size: 60px;
+      animation: denyut 1.4s infinite;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    h1 span {
+      color: #ff8fab;
+    }
+
+    .subtitle {
+      color: #ddd;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .code-box {
+      text-align: left;
+      padding: 18px;
+      margin-bottom: 25px;
+      border-radius: 16px;
+      background: rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.1);
+      font-family: monospace;
+      line-height: 1.8;
+      color: #ffc2d1;
+    }
+
+    .question {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    button {
+      border: none;
+      padding: 13px 25px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .yes {
+      color: white;
+      background: linear-gradient(135deg, #ff4d8d, #c91875);
+      box-shadow: 0 8px 25px #ff4d8d55;
+    }
+
+    .no {
+      color: white;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    button:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    .message {
+      margin-top: 20px;
+      min-height: 25px;
+      color: #ffb3c6;
+      font-weight: bold;
+    }
+
+    .floating {
+      position: absolute;
+      font-size: 22px;
+      opacity: .5;
+      animation: naik 7s linear infinite;
+    }
+
+    @keyframes muncul {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes denyut {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+
+    @keyframes naik {
+      from {
+        transform: translateY(110vh) rotate(0deg);
+      }
+      to {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+  </style>
 </head>
-<body style="text-align:center; font-family:sans-serif; background:pink;">
-  <h1>Hai [Nama dia] ❤️</h1>
-  <p>if (aku.suka == kamu) {</p>
-  <p>  return "Mau jadi pacar aku?";</p>
-  <p>}</p>
-  <button onclick="alert('Yeyy aku seneng banget 🥳')">MAU</button>
-  <button onclick="alert('Gapapa... aku coba lagi besok 😔')">NGGA DULU</button>
+
+<body>
+
+  <div class="floating" style="left:10%; animation-delay:0s;">❤️</div>
+  <div class="floating" style="left:25%; animation-delay:2s;">💗</div>
+  <div class="floating" style="left:70%; animation-delay:4s;">💖</div>
+  <div class="floating" style="left:88%; animation-delay:1s;">💕</div>
+
+  <div class="card">
+
+    <div class="heart">❤️</div>
+
+    <h1>Hai, <span>AMANDA</span> 👋</h1>
+
+    <p class="subtitle">
+      Ada sesuatu yang mau aku tanyain...
+    </p>
+
+    <div class="code-box">
+      <div>if (aku.suka == kamu) {</div>
+      <div>&nbsp;&nbsp;return "❤️";</div>
+      <div>}</div>
+    </div>
+
+    <div class="question">
+      Mau jadi orang spesial buat aku? 💗
+    </div>
+
+    <div class="buttons">
+      <button class="yes" onclick="mau()">
+        MAU ❤️
+      </button>
+
+      <button class="no" onclick="ngga()">
+        NGGA DULU 😭
+      </button>
+    </div>
+
+    <div class="message" id="message"></div>
+
+  </div>
+
+  <script>
+    function mau() {
+      document.getElementById("message").innerHTML =
+        "Yeyy! Seneng banget 🥳❤️";
+    }
+
+    function ngga() {
+      document.getElementById("message").innerHTML =
+        "Hehe, gapapa kok 😭💗";
+    }
+  </script>
+
 </body>
 </html>
